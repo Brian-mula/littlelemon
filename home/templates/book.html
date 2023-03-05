@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h3>This is the book page</h3>
+
+<ul>
+    {% if bookings %}
+    {% for booking in bookings %}
+    <li>
+        <h5>{{booking.first_name}} {{booking.last_name}}</h5>
+        <h6>{{booking.guest_number}}</h6>
+        <p>{{booking.comment}}</p>
+    </li>
+    {% endfor %}
+    {% endif%}
+</ul>
+
+{% endblock %}
