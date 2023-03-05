@@ -6,7 +6,7 @@
     {% if menues %}
     {% for menu in menues %}
     <li>
-        <h5>{{menu.name}}</h5>
+        <a href="{% url 'menu_item' menu.pk %}"><h5>{{menu.name}}</h5></a>
         <span>${{menu.price}}.00</span>
     </li>
     {% endfor %}
