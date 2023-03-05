@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Menu
+from .models import Booking
 
 # Create your views here.
 
@@ -15,4 +16,5 @@ def menu(request):
     return render(request, 'menu.html', context={'menues':context})
 
 def book(request):
-    return render(request,'book.html')
+    bookings=Booking.objects.all()
+    return render(request,'book.html',context={'bookings':bookings})
