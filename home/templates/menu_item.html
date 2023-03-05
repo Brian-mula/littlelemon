@@ -1,10 +1,23 @@
 {% extends 'base.html' %}
 
+
 {% block content%}
+
+{% load static %}
 <h1>This is the menu item page</h1>
 
 {% if menu %}
-<h5>{{ menu.name}}</h5>
-<p>${{menu.price}}.00</p>
+<div class="d-flex">
+    <div class="w-50">
+        <h3 class="h2 mx-5">Menu Item</h3>
+        <h4 class="h4 mx-5">{{menu.name}}</h4>
+
+        <p class="mx-5">{{menu.description}}</p>
+        <h5 class="h5 text-success mx-5">${{menu.price}}.00</h5>
+    </div>
+    <div class="w-25">
+        <img src="{% static '../../pizza-g8242ccd67_1920.jpg'  %}" alt="This is the image">
+    </div>
+</div>
 {% endif %}
 {% endblock%}
