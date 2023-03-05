@@ -15,6 +15,8 @@ class Booking(models.Model):
 class Menu(models.Model):
     name=models.CharField(max_length=200)
     price=models.IntegerField(null=False)
+    description=models.TextField(),
+    image=models.FileField(blank=True,null=True)
 
     def __str__(self):
         return self.name
